@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.border{
+    background: linear-gradient(to right,rgb(0, 0, 0),black);
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: repeat(50,1fr);
+    grid-template-rows: repeat(25,1fr);
+}
+.head{
+   background-color: rgb(0, 255, 145);
+   box-shadow: 0px 0px 10px rgb(0, 255, 30);
+}
+.tomato{
+   background-color: red;
+   border: 1px solid white;
+   box-shadow: 0px 0px 10px red;
+}
+.infor{
+    top: 50px;
+    left: 50px;
+    display: grid;
+    grid-template-columns: 120px 60px;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+}

@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: black;
+}
+.red,.blue,.green,.yellow,.white,.orange
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid white;
+    box-shadow:  0px 0px 20px white;
+}
+.red
+{
+    background-color: red;
+    transform: rotateY(90deg) translateZ(100px);
+}
+.blue
+{
+    background-color: blue;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.green
+{
+    background-color: green;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+.yellow
+{
+    background-color: yellow;
+    transform: rotateX(90deg) translateZ(100px);
+}
+.white
+{
+    background-color: #cbcbcb;
+    transform: rotateY(180deg) translateZ(100px);
+}
+.orange
+{
+    background-color: orange;
+    transform: translateZ(100px);
+}
+.cube{
+    transform: rotateX(45deg) rotateY(45deg);
+    transform-style: preserve-3d;
+}

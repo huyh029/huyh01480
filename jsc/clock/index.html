@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="second">
+        <div class="none_circle_second"><div class="circle_second"></div></div>
+        
+        <div class="minutes">
+            <div class="none_circle_minutes"> <div class="circle_minutes"></div></div>
+           
+            <div class="hour">
+                <div class="none_circle_hour"><div class="circle_hour"></div></div>
+                <div class="circle_center">
+                    <div style="background-color: rgb(0, 0, 0);border: 1px solid white; width: 20px;height: 20px;border-radius: 50%;box-shadow: 1px 1px 20px white;"></div>
+                </div>
+                <div style="display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                z-index: 3;
+                " class="controller_hour">
+                    <div class="hour_hand"></div>
+                    <div class="hour_hand" style="background: none;border: none; box-shadow: none;"></div>
+                </div>
+                <div style="display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                z-index: 2;
+                "
+                class="controller_minutes">
+                   
+                    <div class="minutes_hand"></div>
+                 
+                    <div class="minutes_hand" style="background: none;border: none; box-shadow: none;"></div>
+               
+                </div>
+                <div style="display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                z-index: 1;
+                " class="controller_second">
+                    <div class="second_hand"></div>
+                    <div class="second_hand" style="background: none;border: none; box-shadow: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="am_pm">
+
+        </div>
+        
+        <div class="Box"></div>
+    </div>
+</body>
+<script src="js.js"></script>
+</html>
