@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    height: 100vh;
+    background-color: black;
+}
+.cloud
+{
+    margin: 100px auto;
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px white;
+    position: relative;
+}
+.cloud::after
+{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 70px -20px 0px 23px rgb(255, 255, 255),70px -20px 10px 23px rgb(255, 255, 255),0px 0px 10px white;
+    transform: translateX(43px) translateY(-43px);
+}
+.container
+{
+    border-bottom: 1px solid rgb(255, 255, 255);
+    height: 80%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px white;
+}
+.rain
+{
+    width: 10px;
+    top: 60px;
+    left: 150px;
+    /* left: 660px;  920px */
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    text-shadow: 0px 0px 15px white,0px 0px 20px rgb(200, 200, 200),0px 0px 25px white;
+    position: absolute;
+    animation: rain 1.5s;
+    z-index: 10;
+}
+@keyframes rain
+{
+    0%{
+        transform: translateY(0) scale(1);
+    }
+    100%
+    {
+        transform: translateY(430px) scale(1);
+    }
+}
