@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bảng diểm</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            font-size: 30px;
+            margin: 5px;
+        }
+        body{
+            height: 100vh;
+            padding:50px 20px;
+        }
+        .body{
+            padding:50px 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 2fr 5fr;
+            gap:30px;
+        }
+        .body>div{
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+        <div>họ tên:</div>
+        <div class="a"></div>
+        <div class="body">
+        <div>toán</div>
+        <div class="b"></div>
+        <div>văn</div>
+        <div class="c"></div>
+        <div>khtn</div>
+        <div class="d"></div>
+        <div>lịch sử và địa lý</div>
+        <div class="e"></div>
+        <div>tin</div>
+        <div class="f"></div>
+        <div>gdcd</div>
+        <div class="i"></div>
+        <div>ngoại ngữ</div>
+        <div class="g"></div>
+        </div>
+        <div class="body">
+        <div>tổng:</div>
+        <div class="h"></div>
+        <div>hạng:</div>
+        <div class="k"></div>
+        </div>
+</body>
+<script>
+var student=[
+['Phan Ngọc An',1.75,3,3,4.25,1.75,4.5,2.5,20.75,45],
+['Đặng Thị Phương Anh',4.25,4,5.75,4,5.5,8.75,3.75,36,31],
+['Trương Ngọc Ánh',1,6.5,4.75,5.5,4.5,7.5,2.25,32,39],
+['Ngân Thiên Bảo',2.25,1.5,4.5,4.75,5.5,7.75,2.25,28.5,40],
+['Ngô Gia Bảo',7.25,5,5.25,5.75,5.5,8.25,3.5,40.5,24],
+['Nguyễn Văn Bảo',1,0.5,4,3.25,3.25,7.25,1.5,20.75,45],
+['Ninh Thị Ngọc Bích',8.25,6,7.75,8.5,6.25,8.25,4.75,49.75,5],
+['Mai Thế Danh',5.25,4,4.75,6.25,6,6.75,3.25,36.25,30],
+['Nguyễn Văn Phong Danh',3.75,4.5,5.75,6.75,5,8.5,1.75,36,31],
+['Lê Hà Dung',3.25,6.5,5.75,8.75,6.75,9.5,5.25,45.75,13],
+['Nguyễn Linh Đan',8.5,5,7.25,6.75,6.75,7,5.25,46.5,12],
+['Trần Hà Đan',3,5,5,4.25,7.75,8,3.5,36.5,29],
+['Nguyễn Anh Đạt',1,1,2.75,3.25,4.5,3.25,2,17.75,49],
+['Hồ Hữu Minh Đức',3.25,4,7,7.5,5.25,9,4.75,40.75,23],
+['Lê Đặng Thúy Hằng',8.5,7,7.25,6.75,6.75,8.75,3.5,48.5,8],
+['Nguyễn Trọng Hoàng',5.5,4,5,5.5,5.75,9.25,1.75,36.75,28],
+['Nguyễn Văn Hợp',1.75,1.5,7,1.75,3.5,4,2.75,22.25,44],
+['Nguyễn Quốc Khang',1.25,0.5,7,2.75,4,2.75,1.25,19.5,48],
+['Châu Ngọc Kiên',8.25,5,5.5,8.5,6.75,9.5,7,50.5,4],
+['Phạm Văn Lâm',3.25,3,8.5,6,5.5,7.75,1.75,35.75,33],
+['Hoàng Nhật Minh',3.75,1,8.25,3.75,4.25,2.5,2.25,25.75,42],
+['Hoàng Thị A Na',5.5,5.5,7,5.5,5.25,8,4.75,41.5,22],
+['Nguyễn Bảo Nam',6.75,3.75,8,6,5.75,7.75,6.25,44.25,15],
+['Lê Hoài Bảo Ngọc',5.25,8.5,6.25,8,7.5,9,3.75,48.25,9],
+['Nguyễn Cảnh Nguyên',6,4.5,7.5,4.5,5.5,7.25,3,38.25,27],
+['Đoàn Thị Yến Nhi',7,6.5,5.5,5.25,7.25,8.5,2,42,19],
+['Huỳnh Đông Nhi',1.5,1,8.25,1.5,4,5.25,1.25,22.75,43],
+['Nguyễn Lê Kiều Oanh',9,8.5,7,9,7.5,9.25,6.5,56.75,1],
+['Nguyễn Thị Kiều Oanh',8.25,6.5,5.75,5.5,7,8.75,5.75,47.5,11],
+['Nguyễn Mạnh Phi',5.75,5,5.5,7.5,5.25,7.5,3.75,40.25,25],
+['Hoàng Trung Quân',5.25,3.5,0.75,6.25,6.5,7.75,4.75,34.75,34],
+['Phạm Thanh Quân',2.25,4.5,5.5,7.75,3.5,7.5,2.25,33.25,38],
+['Lê Anh Qúy',4,6,8,7.25,6.5,9.5,3.75,45,14],
+['Lê Thị Diễm Quỳnh',6.75,6.5,8,7.75,6.5,9,3.25,47.75,10],
+['Hà Minh Tâm',3.75,5,7.5,7.25,7,8,5.5,44,16],
+['Nguyễn Đình Thành',3.75,5,4.75,5.25,4,7,3.75,33.5,37],
+['Trần Hữu Thành',3,4,9.5,5,2.5,8,2,34,35],
+['Lê Thị Anh Thư',7.5,8.5,7.75,9.75,7,9.25,6,55.75,2],
+['Hà Xuân Tiến',1.25,3,3,3.25,4.75,3.75,1.5,20.5,47],
+['Nguyễn Xuân Toản',8.75,6.25,8.25,8.75,6,9,7.5,54.5,3],
+['Dương Ngọc Trâm',2.5,5.5,5,1.5,4.25,6.75,1.75,27.25,41],
+['Lê Bảo Trâm',3.75,8.5,5.75,6.75,5.25,8.25,3.75,42,19],
+['Lữ Thị Quỳnh Trâm',3.5,5.5,5,5.5,5,7.25,2.25,34,35],
+['Nguyễn Bảo Trâm',4.25,4.5,6.5,8,4.5,8,4.5,40.25,25],
+['Trần Đỗ Bảo Trâm',2.5,7,6.75,6.75,5.75,9,4.5,42.25,18],
+['Trương Bảo Trâm',6.25,5.5,6.5,7.5,5.25,8.75,4.25,44,16],
+['Nguyễn Phương Trinh',8.75,6.5,6.75,8,7.75,8.5,3.5,49.75,5],
+['Nguyễn Viết Vinh',5.25,5.5,5.25,6.5,6.75,7.25,5.25,41.75,21],
+['Tạ Minh Vũ',7.75,4,8.5,7.25,7.5,8.75,5.5,49.25,7],
+
+]
+console.log(student);
+var index=0
+function update(){
+    document.querySelector(".a").textContent=student[index][0]
+    document.querySelector(".b").textContent=student[index][1]
+    document.querySelector(".c").textContent=student[index][2]
+    document.querySelector(".d").textContent=student[index][3]
+    document.querySelector(".e").textContent=student[index][4]
+    document.querySelector(".f").textContent=student[index][5]
+    document.querySelector(".i").textContent=student[index][6]
+    document.querySelector(".g").textContent=student[index][7]
+    document.querySelector(".h").textContent=student[index][8]
+    document.querySelector(".k").textContent=student[index][9]
+}
+update();
+document.addEventListener("keydown",e=>{
+    if(e.key==='a'){
+        index++;
+        update();
+    }
+})
+</script>
+</html>

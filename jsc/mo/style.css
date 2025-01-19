@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.gomo, .gochuong{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.mo, .chuong{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+.mo{
+    background-image: url("pre-removebg-preview.png");
+}
+.chuong{
+    width: 270px;
+    height: 300px;
+    border-radius: 10px 10px 100px 100px;
+    background-color: azure;
+}
+.can{
+    width: 300px;
+    height: 15px;
+    background-color: white;
+    border-radius: 15px;
+}
+.dau{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 0;
+}
+.thanh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    transform-origin: left bottom; /* Thiết lập điểm xoay */
+    transform: rotate(-20deg); /* -8.5 deg */
+    width: 300px;
+    height: 30px;
+    position: absolute; 
+}
+.go{
+    animation: go 0.1s ease;
+}
+@keyframes go {
+    0%{ transform: rotate(-20deg);}
+    50%{transform: rotate(-8.5deg);}
+    100%{
+        transform: rotate(-20deg);
+    }
+}
+ .thanhchuong{
+    top: 10px;
+    left: -250px;
+}
+.thanhmo{
+    top: 130px;
+    left: 0px;
+} 

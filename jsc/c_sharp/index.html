@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>c#</title>
+</head>
+<body>
+    <ul class="menu">
+        <li>cấu trúc cơ bản</li>
+        <li>biến</li>
+        <li>ép kiểu dữ liệu</li>
+        <li>toán tử</li>
+        <li>Math</li>
+        <li>string</li>
+        <li>if else</li>
+        <li>switch case</li>
+        <li>while</li>
+        <li>for/foreach</li>
+        <li>break/continue</li>
+        <li>array</li>
+        <li>hàm</li>
+        <li>nạp chồng hàm</li>
+        <li>class/object</li>
+        <li>hàm tạo</li>
+        <li>get và set</li>
+        <li>kế thừa</li>
+        <li>đa hình + ghi đè</li>
+    </ul>
+    <div class="content">
+
+        <!------------------------------------------------- cấu trúc cơ bản--------------------------------------------------- -->
+
+        <div class="hidden">
+            <p>
+                <div class="tap"></div>using < tên thư viện ><br>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                namespace cau_truc_co_ban<br>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                {<br>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    class program<br>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    {<br>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                         static void main(string[] args)<br>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        <div class="tap"></div>
+                        {<br>
+                       <div class="tap"></div>
+                       <div class="tap"></div>
+                       <div class="tap"></div>
+                       <div class="tap"></div>
+                       <div class="tap"></div>
+                       <div class="tap"></div>
+                       <div class="tap"></div>
+                       <div class="tap"></div> // nơi viết câu lệnh<br>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                    <div class="tap"></div>
+                   
+                }<br>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+    
+   
+            }<br>
+        <div class="tap"></div>
+        <div class="tap"></div>
+        <div class="tap"></div>
+   
+        }<br>
+            </p> 
+        </div>
+
+        <!-- --------------------------------------------biến ---------------------------------------------- -->
+
+        <div class="hidden">
+            <table>
+            <tr>
+                <td>int </td>
+                <td>số nguyên</td>
+                <td>int x;</td>
+            </tr>
+            <tr>
+                <td>double</td>
+                <td>số thực</td>
+                <td>double x;</td>
+            </tr>
+            <tr>
+            <td>char</td>
+            <td>kí tự</td>
+            <td>char a;</td>
+            </tr>
+            <tr>
+                <td>string</td>
+                <td>xâu</td>
+                <td>string name="john";</td>
+            </tr>
+            <tr>
+                <td>bool</td>
+                <td>đúng/sai</td>
+                <td>bool a;</td>
+            </tr>
+            <tr>
+                <td>const</td>
+                <td>hằng số</td>
+                <td>const int x=15;</td>
+            </tr>
+            </table>
+        </div>
+
+
+<!-- ------------------------------------------ép kiểu dữ liệu----------------------------------------------------- -->
+
+        <div class="hidden">
+            <div class="tap"></div>
+            <p>
+            (int) name_value;<br>
+            hoặc covert.ToString(name_value);<br>
+            <div class="tap"></div>
+            <div class="tap"></div>
+            covert.ToDouble(name_value);<br>
+            <div class="tap"></div>
+            <div class="tap"></div>
+            covert.ToInt32(name_value);<br>
+<br>
+            cách nhập giá trị biến từ máy tính: console.ReadLine();<br>
+            nhưng kiểu nhập vào là <b>string</b> <br>
+            -> cần ép kiểu dữ liệu sang int <br>
+            ->int x=convert.ToInt32(console.ReadLine());<br>
+</p>
+
+        </div>
+
+<!-- ------------------------------------------toán tử----------------------------------------------------- -->
+
+        <div class="hidden">
+
+            <table>
+                <tr>
+                    <td>x ^= 3</td>
+                    <td>
+                        <table>
+                        <tr><td>x = 5</td></tr>
+                        <tr><td>x = 0000 0101</td></tr>
+                        <tr><td>xor</td></tr>
+                        <tr><td>3 = 0000 0011</td></tr>
+                        <tr><td><div class="tap"></div><div class="tap"></div>0000 0110 = 6</td></tr>
+                        <tr><td>xor(x,y) = x + y;</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>x &= 3</td>
+                    <td>
+                        <table>
+                        <tr><td>x = 5</td></tr>
+                        <tr><td>x = 0000 0101</td></tr>
+                        <tr><td>&</td></tr>
+                        <tr><td>3 = 0000 0011</td></tr>
+                        <tr><td><div class="tap"></div><div class="tap"></div>0000 0001 = 1</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>x |= 3</td>
+                    <td>
+                        <table>
+                        <tr><td>x = 5</td></tr>
+                        <tr><td>x = 0000 0101</td></tr>
+                        <tr><td>&</td></tr>
+                        <tr><td>3 = 0000 0011</td></tr>
+                        <tr><td><div class="tap"></div><div class="tap"></div>0000 0111 = 7</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr><td>x >>= 2</td><td>->dịch sang phải 2 bit: 0000 1000 -> 0000 0010 </td></tr>
+                <tr><td>x <<= 2</td><td>->dịch sang trái 2 bit: 0000 0010 -> 0000 1000 </td></tr>
+            </table>
+        </div>
+    <!-- --------------------------------math---------------------------------------------------------------- -->
+        <div class="hidden">
+
+            Math.Max(5,10);<i>//10</i><br> 
+            Math.Min(5,10);<i>//5</i><br>
+            Math.sqrt(64);<i>//8</i><br>
+            Math.abs(-4.7);<i>//4.7</i><br>
+            Math.Round(9.99);<i>//10</i>
+
+        </div>
+        <!-------------------------------------------- string  ---------------------------------------------- -->
+        <div class="hidden">
+string txt="abCD";<br>
+txt.lenght;<i>//4</i><br>
+txt.toUpper();<i>//ABCD</i><br>
+txt.toLower();<i>//abcd</i><br>
+"abc" + "def";<i>//abcdef</i><br>
+$"name: {txt} ";<i>// name: abCD</i><br>
+txt[0];<i>//a</i><br>
+txt[1];<i>//b</i><br>
+\': chèn '<br>
+\": chèn "<br>
+\\: chèn \<br>
+\n: xuống dòng <br>
+\t: white_space <br>
+\b: lùi con trỏ in ra xuống 1 đơn vị<i>// txt\b in ra là <u>abC</u> nhưng txt vẫn là abCD</i><br>
+        </div>
+
+<!-- --------------------------------------------if else-------------------------------------------------------- -->
+
+        <div class="hidden">
+
+         <div class="tap"></div>   if( điều kiện  ) <br>
+       <div class="tap"></div>     {<br>
+        <div class="tap"></div>         <div class="tap"></div>    <i>//câu lệnh chạy nếu đúng</i><br>
+          <div class="tap"></div>  } <br>
+          <div class="tap"></div>  else <br>
+          <div class="tap"></div>  { <br>
+            <div class="tap"></div>     <div class="tap"></div>    <i>// câu lệnh chạy nếu sai</i><br>
+            <div class="tap"></div> }
+
+        </div>
+        <!-- --------------------------------------switch case------------------------- -->
+        <div class="hidden">
+
+        <div class="tap"></div>    switch(biểu thức) <br>
+        <div class="tap"></div>
+        <div class="tap"></div>    { <br>
+        <div class="tap"></div>
+        <div class="tap"></div>
+        <div class="tap"></div>        case  < giá trị 1 > : <i>//câu lệnh bắt đầu chạy nếu đúng tính cả những câu lệnh phía dưới</i> <br>
+        <div class="tap"></div>
+        <div class="tap"></div>
+        <div class="tap"></div>        case  < giá trị 2 > : <i>//câu lệnh bắt đầu chạy nếu đúng tính cả những câu lệnh phía dưới</i> <br>
+        <div class="tap"></div>
+        <div class="tap"></div>
+        <div class="tap"></div>        case  < giá trị 3 > : <i>//câu lệnh bắt đầu chạy nếu đúng tính cả những câu lệnh phía dưới</i> <br>
+        <div class="tap"></div>
+        <div class="tap"></div>
+        <div class="tap"></div>        default : <i>//câu lệnh chạy từ đây xuống dưới </i> <br>
+        <div class="tap"></div>
+        <div class="tap"></div>    }
+
+        </div>
+
+        <!------------------------------------------- while----------------------------------------- -->
+        <div class="hidden">
+
+            <div class="tap"></div>
+            while( điều kiện ) <br>
+            <div class="tap"></div>
+            <div class="tap"></div>
+            { <br>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <i>//chạy đến khi điều kiện sai</i> <br>
+            <div class="tap"></div>
+            <div class="tap"></div>
+            } <br>
+        </div>
+
+<!-- ------------------------------------------for/foreach------------------------------------- -->
+
+        <div class="hidden">
+            <div class="tap"></div>
+            for(int i = 0 ; t < 10 ; i++ ) <br>
+            <div class="tap"></div>
+            <div class="tap"></div>
+            { <br>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <div class="tap"></div>
+                <i>// chạy 10 vòng với i thay đổi từ 0 đến 9</i> <br>
+                <div class="tap"></div>
+                <div class="tap"></div>
+            } <br>
+            <div class="tap"></div>
+            foreach(int i in arr) <i>//lấy tất cả giá trị của arr</i> <br>
+            <div class="tap"></div>
+            <div class="tap"></div>
+            { <br>
+ <br>
+ <div class="tap"></div>
+ <div class="tap"></div>
+            } <br>
+        </div>
+        <!----------------------------------------break/continue-------------------------------------- -->
+        <div class="hidden">
+            break: thoát vòng lặp <br>
+            continue: bỏ qua lần lặp 
+        </div>
+        <!-- ------------------------------------array--------------------------------------------- -->
+        <div class="hiden">
+            int arr[]={1,2,3};
+            <br>
+            string arr[]={"abc","def","mnp"};
+<br><br>
+            Array.Sort(arr); <i>// sắp xếp tăng dần </i><br>
+            arr.Max();<br>
+            arr.Min();<br>
+            arr.Sum();<br>
+<br>
+            (a,b)=>b.compareTo(a);<i>//(b-a)/|a-b|</i><br>
+            Array.Sort(arr,(a,b)=>b.compareTo(a);) <i>//sắp xếp giảm dần</i><br>
+            <br>
+            int[,] numbers={{1,4,2},{3,6,8}};<i>mảng 2 chiều</i>
+        </div>
+        <div class="hidden"></div>
+        <div class="hidden"></div>
+        <div class="hidden"></div>
+        <div class="hidden"></div>
+        <div class="hidden"></div>
+        <div class="hidden"></div>
+        <div class="hidden"></div>
+    </div>
+</body>
+<script src="logic.js"></script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Case Diagram Level 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/2.0.1/sequence-diagram-min.js"></script>
+</head>
+<body>
+    <div id="diagram"></div>
+
+    <script>
+        const diagramContent = `
+            actor KhachViengTham
+            actor KhachHang
+
+            KhachViengTham -> (DangKy): Nhập thông tin cá nhân
+            KhachViengTham -> (DangKy): Xác thực thông tin
+            KhachViengTham -> (DangKy): Hoàn tất đăng ký
+
+            KhachViengTham -> (XemDanhSachPhimNoiBat): Hiển thị danh sách
+            KhachViengTham -> (XemDanhSachPhimNoiBat): Lọc phim
+            KhachViengTham -> (XemDanhSachPhimNoiBat): Xem chi tiết
+
+            KhachViengTham -> (TimKiem): Nhập từ khóa tìm kiếm
+            KhachViengTham -> (TimKiem): Hiển thị kết quả
+            KhachViengTham -> (TimKiem): Chọn phim
+
+            KhachHang -> (QuanLyHoSo): Cập nhật thông tin
+            KhachHang -> (QuanLyHoSo): Thay đổi ảnh đại diện
+
+            KhachHang -> (DanhGia): Nhập nội dung bình luận
+            KhachHang -> (DanhGia): Chọn số sao
+
+            KhachHang -> (PhanHoiThongTin): Chọn danh mục phản hồi
+            KhachHang -> (PhanHoiThongTin): Gửi thông tin chi tiết
+        `;
+
+        const options = { theme: 'simple' };
+        $("#diagram").sequenceDiagram({ theme: "simple", content: diagramContent });
+    </script>
+</body>
+</html>

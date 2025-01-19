@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transform-style: preserve-3d;
+}
+.rubik
+{
+    transform-style: preserve-3d;
+    transform: rotateX(-27deg) rotateY(42deg);
+}
+.cube > div
+{
+    border: 1px black solid;
+    box-sizing: border-box; 
+}
+.face
+{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+}
+.cube
+{
+    position: relative;
+    transform-style: preserve-3d;
+}
+.font
+{
+    transform: translateZ(50px);
+}
+.red{
+    background-color: red;
+}
+.back
+{
+    transform: translateZ(-50px);
+}
+.orange{
+    background-color: orange;
+}
+.right
+{
+    transform: rotateY(90deg) translateZ(50px);
+   
+}
+.blue{
+    background-color: blue;
+}
+.left
+{
+    transform: rotateY(90deg) translateZ(-50px);
+    
+}
+.green{
+    background-color: green;
+}
+.top
+{
+    transform: rotateX(90deg) translateZ(50px);
+    
+    
+}
+.yellow{
+    background-color: yellow;
+}
+.bottom
+{
+    transform: rotateX(90deg) translateZ(-50px);
+    
+}
+.white{
+    background-color: white;
+}
+.control > div {
+    border:51px rgba(0, 0, 0, 0.614) solid;
+}
+.xduoi.yduoi.zduoi{
+    transform: translateX(-100px) translateY(-100px) translateZ(-100px);
+    }
+    .xduoi.yduoi.zgiua{
+    transform: translateX(-100px) translateY(-100px) translateZ(0px);
+    }
+    .xduoi.yduoi.ztren{
+    transform: translateX(-100px) translateY(-100px) translateZ(100px);
+    }
+    .xduoi.ygiua.zduoi{
+    transform: translateX(-100px) translateY(0px) translateZ(-100px);
+    }
+    .xduoi.ygiua.zgiua{
+    transform: translateX(-100px) translateY(0px) translateZ(0px);
+    }
+    .xduoi.ygiua.ztren{
+    transform: translateX(-100px) translateY(0px) translateZ(100px);
+    }
+    .xduoi.ytren.zduoi{
+    transform: translateX(-100px) translateY(100px) translateZ(-100px);
+    }
+    .xduoi.ytren.zgiua{
+    transform: translateX(-100px) translateY(100px) translateZ(0px);
+    }
+    .xduoi.ytren.ztren{
+    transform: translateX(-100px) translateY(100px) translateZ(100px);
+    }
+    .xgiua.yduoi.zduoi{
+    transform: translateX(0px) translateY(-100px) translateZ(-100px);
+    }
+    .xgiua.yduoi.zgiua{
+    transform: translateX(0px) translateY(-100px) translateZ(0px);
+    }
+    .xgiua.yduoi.ztren{
+    transform: translateX(0px) translateY(-100px) translateZ(100px);
+    }
+    .xgiua.ygiua.zduoi{
+    transform: translateX(0px) translateY(0px) translateZ(-100px);
+    }
+    .xgiua.ygiua.zgiua{
+    transform: translateX(0px) translateY(0px) translateZ(0px);
+    }
+    .xgiua.ygiua.ztren{
+    transform: translateX(0px) translateY(0px) translateZ(100px);
+    }
+    .xgiua.ytren.zduoi{
+    transform: translateX(0px) translateY(100px) translateZ(-100px);
+    }
+    .xgiua.ytren.zgiua{
+    transform: translateX(0px) translateY(100px) translateZ(0px);
+    }
+    .xgiua.ytren.ztren{
+    transform: translateX(0px) translateY(100px) translateZ(100px);
+    }
+    .xtren.yduoi.zduoi{
+    transform: translateX(100px) translateY(-100px) translateZ(-100px);
+    }
+    .xtren.yduoi.zgiua{
+    transform: translateX(100px) translateY(-100px) translateZ(0px);
+    }
+    .xtren.yduoi.ztren{
+    transform: translateX(100px) translateY(-100px) translateZ(100px);
+    }
+    .xtren.ygiua.zduoi{
+    transform: translateX(100px) translateY(0px) translateZ(-100px);
+    }
+    .xtren.ygiua.zgiua{
+    transform: translateX(100px) translateY(0px) translateZ(0px);
+    }
+    .xtren.ygiua.ztren{
+    transform: translateX(100px) translateY(0px) translateZ(100px);
+    }
+    .xtren.ytren.zduoi{
+    transform: translateX(100px) translateY(100px) translateZ(-100px);
+    }
+    .xtren.ytren.zgiua{
+    transform: translateX(100px) translateY(100px) translateZ(0px);
+    }
+    .xtren.ytren.ztren{
+    transform: translateX(100px) translateY(100px) translateZ(100px);
+    }
+    

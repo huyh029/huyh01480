@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+     border: 1px solid black; 
+}
+.menu
+{
+    list-style-type: none;
+    width: 15%;
+    height: 100vh;
+    display: grid ;
+    float: left;
+}
+.menu li{
+background-color: aqua;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.content
+{
+    padding: 20px;
+    width: calc(84% - 40px);
+    float: right;
+    background-color: red;
+    height: calc(100vh - 40px);
+    font-size: 25px;
+}
+.hidden
+{
+    display: none;
+}
+.tap
+{
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    background-color: aqua;
+}
+table
+{
+     width: 100%; 
+}
+
