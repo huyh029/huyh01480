@@ -105,7 +105,7 @@ img {
     height: 100%;
 }
 div{
-    animation: zoomInOut 1s ease-in-out;
+    animation: zoomInOut 1s ease-in-out forwards;
 }
 
 @keyframes zoomInOut {
@@ -336,9 +336,10 @@ document.querySelector('.clickme').addEventListener("click",e=>{
     }, 3500);
     setTimeout(() => {
        hideDiv(document.querySelector('.hpny'))
-        
+        setTimeout(() => {
         document.querySelector('.thiep').style.display = 'flex'
-    }, 6500);
+    }, 1000);
+          }, 6500);
     setTimeout(() => {
         start()
     }, 2100);
@@ -356,16 +357,8 @@ function animate() {
 
 animate();
 function hideDiv(div) {
-  // Thêm animation reverse
-  div.style.animation = 'zoomInOut 1s ease-in-out reverse'; 
-  
-  // Đợi animation kết thúc
-  div.addEventListener('animationend', function handleAnimationEnd() {
-    div.style.opacity = '0'; // Làm mờ
-    div.style.visibility = 'hidden'; // Ẩn đi
-    div.style.display = 'none'; // Hoàn toàn ẩn
-    div.removeEventListener('animationend', handleAnimationEnd); // Loại bỏ sự kiện sau khi hoàn tất
-  });
+div.style.display = 'none';
+
 }
 
 </script>
