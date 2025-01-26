@@ -335,11 +335,9 @@ document.querySelector('.clickme').addEventListener("click",e=>{
         document.querySelector('.hpny').style.display = 'flex'
     }, 3500);
     setTimeout(() => {
-        document.querySelector('.hpny').style.display = 'none'
-            setTimeout(() => {
+       hideDiv(document.querySelector('.hpny'))
+        
         document.querySelector('.thiep').style.display = 'flex'
-    }, 1000);
-  
     }, 6500);
     setTimeout(() => {
         start()
@@ -357,6 +355,13 @@ function animate() {
 }
 
 animate();
-
+function hideDiv(div) {
+  div.style.animation = 'zoomInOut 1s ease-in-out reverse'; // Animation ngược
+  setTimeout(() => {
+    div.style.opacity = '0'; // Làm mờ
+    div.style.visibility = 'hidden'; // Ẩn đ
+      div.style.display = 'none'
+  }, 1000); // Delay theo thời gian animation
+    }
 </script>
 </html>
