@@ -199,7 +199,7 @@ let content = document.querySelector(".content");
 // Lấy chiều rộng (width) dưới dạng số, loại bỏ đơn vị 'px'
 let width = document.querySelector('body').offsetWidth
 console.log( width*0.6);
-
+if(width > 800) window.location.replace('https://huyh029.github.io/tetHoliday/')  
 
 // Gán chiều cao (height) bằng chiều rộng nhân với 1.5
 content.style.height = (width * 0.6) + "px";
