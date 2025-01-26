@@ -336,7 +336,10 @@ document.querySelector('.clickme').addEventListener("click",e=>{
     }, 3500);
     setTimeout(() => {
         document.querySelector('.hpny').style.display = 'none'
+            setTimeout(() => {
         document.querySelector('.thiep').style.display = 'flex'
+    }, 1000);
+  
     }, 6500);
     setTimeout(() => {
         start()
