@@ -356,12 +356,17 @@ function animate() {
 
 animate();
 function hideDiv(div) {
-  div.style.animation = 'zoomInOut 1s ease-in-out reverse'; // Animation ngược
-  setTimeout(() => {
+  // Thêm animation reverse
+  div.style.animation = 'zoomInOut 1s ease-in-out reverse'; 
+  
+  // Đợi animation kết thúc
+  div.addEventListener('animationend', function handleAnimationEnd() {
     div.style.opacity = '0'; // Làm mờ
-    div.style.visibility = 'hidden'; // Ẩn đ
-      div.style.display = 'none'
-  }, 1000); // Delay theo thời gian animation
-    }
+    div.style.visibility = 'hidden'; // Ẩn đi
+    div.style.display = 'none'; // Hoàn toàn ẩn
+    div.removeEventListener('animationend', handleAnimationEnd); // Loại bỏ sự kiện sau khi hoàn tất
+  });
+}
+
 </script>
 </html>
