@@ -17,6 +17,7 @@
             left: 0;
         }
         body{
+    padding: 10px;
     height: 100vh;
     background-color: black;
     display: flex;
@@ -34,7 +35,7 @@
 }
 .hpny{
     font-family: "Sofia", sans-serif;
-    font-size: 70px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     border-radius: 50%;
     display: flex;
@@ -58,7 +59,7 @@
     position: relative;
 }
 img {
-    width: 300px;
+    width: 40%;
     filter: drop-shadow(0px 0px 10px rgb(238, 255, 0));
 }
 .clickme:hover{
@@ -70,11 +71,11 @@ img {
 }
 .top{
     top:-50px;
-    width: 35%;
+    width: 55%;
 }
 .center{
-    top:150px;
-    width: 20%;
+    top:50px;
+    width: 40%;
 }
 .left{
     left:0;
@@ -90,10 +91,9 @@ img {
     overflow: hidden;
     box-shadow: 0 0 5px white,0 0 10px yellow;
     z-index: -3;
-    width: 320px;
-    height: 520px;
+    width: 40%;
     border-radius: 10px;
-    font-size: 28px;
+    font-size: 20px;
     padding:  40px;
 }
 .content > img{
@@ -101,8 +101,8 @@ img {
     top: 0;
     left: 0;
     z-index: -2;
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
 }
 div{
     animation: zoomInOut 1s ease-in-out;
@@ -193,7 +193,17 @@ div{
     </div>
 </body>
 <script>
-    
+// Lấy phần tử .content
+let content = document.querySelector(".content");
+
+// Lấy chiều rộng (width) dưới dạng số, loại bỏ đơn vị 'px'
+let width = document.querySelector('body').offsetWidth
+console.log( width*0.6);
+
+
+// Gán chiều cao (height) bằng chiều rộng nhân với 1.5
+content.style.height = (width * 0.6) + "px";
+
 const canvas = document.getElementById('fireworksCanvas');
 const ctx = canvas.getContext('2d');
 var pic=['https://www.dropbox.com/scl/fi/xslf6z89pcm1wckex5kfa/avatar_2025_c-ng_b-_t-_t-i_l-c_may_m-n-removebg-preview.png?rlkey=uybqow6tovsss42zcqo7hn99g&st=k5rdtwp1&dl=1',
