@@ -1,0 +1,111 @@
+body{
+    height: 100vh;
+    background-color: black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Sofia", sans-serif;
+}
+.head{
+    height:20vh;
+    background-color: #c50000;
+    color: white;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.monthYear{
+    font-size: 35px;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 80%;
+    position: relative;
+}
+.day{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+.day > div{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.date{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    height: 40vh;
+}
+.date > div{
+    color: white;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.left,.right{
+position: absolute;
+top: 0;
+height: 100%;
+width: 50%;
+display: flex;
+align-items: center;
+}
+.left i,.right i{
+    margin: 20px;
+}
+.left{
+    left: 0;
+    justify-content: start;
+}
+.right{
+    right: 0;
+    justify-content: end;
+}
+.index::after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px white solid;
+    box-shadow: 0 0 5px red;
+    position: absolute;
+}
+.haveOj::before{
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 3px red;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+}
+.haveOj{
+    position: relative;
+}
+.oj{
+    display: flex;
+    flex-direction:column;
+    color:white;
+    gap:20px;
+    padding:20px;
+    font-size: 20px;
+}
+.oj .content{
+    border: 1px white solid;
+    border-radius: 20px;
+    padding:20px 40px;
+    box-shadow: 0 0 5px red;
+}
+.oj .content div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
+    margin: 2px;
+}
