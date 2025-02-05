@@ -47,6 +47,7 @@ function setMonthYear(month,year){
 
 
 function setIndex(e){
+    if(e.textContent=="") return;
     if(document.querySelector(".index")) 
         document.querySelector(".index").classList.remove("index");
     e.classList.add("index");
