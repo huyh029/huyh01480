@@ -47,6 +47,7 @@ function setMonthYear(month,year){
 
 
 function setIndex(e){
+    if(e.textContent=="") return;
     if(document.querySelector(".index")) 
         document.querySelector(".index").classList.remove("index");
     e.classList.add("index");
@@ -112,7 +113,7 @@ Array.from(document.querySelector(".date").children).forEach((e) => {
 
 }
 function parseDate(str) {
-    // Tách chuỗi bằng dấu "_"
+    if(!document.querySelector("."+str)) return
     let parts = str.split("_");
 
     // Lấy ngày, tháng, năm từ mảng kết quả
