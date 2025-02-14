@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="button_container">
+        <div class="button">
+        <div class="button_left"><div class="button_circle_left"></div></div>
+        <div class="button_right"><div class="button_circle_right"></div></div>
+        </div>
+    </div>
+</body>
+<script src="logic.js"></script>
+</html>
