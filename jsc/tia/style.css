@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.point{
+    width: 0px;
+    height: 0px;
+    border-radius:10px 10px 50% 50%;
+    border: 1px white solid;
+    box-shadow: 0 0 5px white,0 0 10px yellow;
+    margin-top:30vh;
+    animation: abc 2s ease-in-out;
+}
+@keyframes abc{
+    0%{
+        width: 0px;
+        height: 0px;
+        margin-top: 90vh;
+    }
+    20%{
+        width: 20px;
+        height: 20px;
+        margin-top: 90vh;
+    }
+    35%{
+        width: 20px;
+        height: 90px;
+        margin-top: calc(90vh - 70px);
+    }
+    80%{
+        width: 20px;
+        height: 20px;
+        margin-top: 30vh;
+    }
+    100%{
+        width: 0px;
+        height: 0px;
+        margin-top: 30vh;
+    }
+}

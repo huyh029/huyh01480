@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container
+{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    border: 10px black solid;
+    border-radius: 2%;
+    cursor: pointer;
+}
+.container > div{
+    width: calc(500px / 8);
+    height:calc(500px / 8);
+}
+.black
+{
+    background-color: rgb(110, 110, 110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.white
+{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.control
+{
+    text-shadow: 0 0 5px rgb(255, 0, 0);
+}
+.cbi
+{
+    border: calc(500px /16) rgba(225, 255, 0, 0.264) solid;
+    box-sizing: border-box;
+    
+}
+.phong_den, .phong_trang
+{
+    width: 100px;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    cursor: pointer;
+    display: none;
+}
+.phong_den > div, .phong_trang > div
+{
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phong_den > div:hover, .phong_trang > div:hover
+{
+    background-color: #f1f1f1;
+}

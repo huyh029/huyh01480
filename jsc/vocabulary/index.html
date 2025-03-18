@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vocabulary</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    }
+    body{
+        background-color: black;
+    }
+    .home .chapContainer{
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        gap: 20px;
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+    .home .chapContainer > div{
+        height: 25vh;
+        border-radius: 20px;        
+        font-size: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+    }
+    .home .chapContainer > div:hover{
+        outline: 1px white solid;
+        box-shadow: 0 0 5px blue;
+    }
+    .home .search{
+        width: calc(100% - 40px);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        border: 1px white solid;
+        width: calc(100% - 80px);
+        height: 40px;
+        margin: 20px;
+        border-radius: 20px;
+        padding: 0 20px;
+    }
+    .home .search input{
+        border: none;
+        outline: none;
+        background: none;
+       width: 100%;
+        font-size: 20px;
+        color: white;
+    }
+    .home .chap{
+        background-color: rgb(68, 0, 255);
+    }
+    .home .test{
+        background-color: red;
+    }
+    .home{
+        display: none;
+    }
+    .chapBox{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        display: none;
+    }
+    .chapBox > div{
+        width: 30%;
+        height: 15%;
+        border-radius: 20vh;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 5vh;
+    }
+    .Back{
+        font-size: 5vh;
+        color: white;
+        background-color: blue;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 5vh;
+        right: 5vh;
+        padding: 14px 16px;
+        border-radius: 20vh;
+    }
+    .practice{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        color: white;
+    }
+    .practice > div{
+        width: 50%;
+        font-size: 25px;
+        padding: 10px;
+        height: 40px;
+    }
+    .practice > .answer{
+        position: fixed;
+        background-color: white;
+        color: black;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        text-align: center;
+        font-size: 30px;
+        animation: show 1s ease-in-out;
+        display: none;
+    }
+    .practice > .tools{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .practice >.tools>div{
+        padding: 14px 16px;
+        background-color: blue;
+        border-radius: 5px;
+    }
+    .practice > .input input{
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        color: white;
+        border-bottom: 2px white solid;
+        font-size: 30px;
+    }
+    .practice > .question{
+        text-align: center;
+    }
+    @keyframes show{
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 30%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div class="search">
+            <input type="text">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="chapContainer">
+
+        </div>
+    </div>
+    <div class="chapBox">
+        <div class="vocabulary">vocabulary</div>
+        <div class="practice1">practice 1</div>
+        <div class="practice2">practice 2</div>
+        <div class="practiceAll">practice all</div>
+        <div class="back">back</div>
+    </div>
+    <div class="vocabularyContainer">
+
+    </div>
+    <div class="Back">
+        back
+    </div>
+    <div class="practice1Container practice">
+        <div class="question">
+            vn
+        </div>
+        <div class="input">
+            <input type="text">
+            <div class="isCorrect">
+            </div>
+        </div>
+        <div class="tools">
+            <div class="answer">answer</div>
+            <div class="check">check</div>
+        </div>
+        <div class="answer">
+            en
+        </div>
+    </div>
+
+    <div class="practice2Container">
+        
+    </div>
+    <div class="practiceAllContainer">
+        
+    </div>
+</body>
+<script>
+  var chapContainer = document.querySelector(".chapContainer");
+  for(var i=1;i<=25;i++){
+    chapContainer.innerHTML+=`<div class='${i} chap'>${i}</div>`;
+  }
+  chapContainer.innerHTML+=`<div class='1 test'>1</div>`;
+  for(var i=26;i<=50;i++){
+    chapContainer.innerHTML+=`<div class='${i} chap'>${i}</div>`;
+  }
+  chapContainer.innerHTML+=`<div class='2 test'>2</div>`;
+  for(var i=51;i<=75;i++){
+    chapContainer.innerHTML+=`<div class='${i} chap'>${i}</div>`;
+  }
+  chapContainer.innerHTML+=`<div class='3 test'>4</div>`;
+  for(var i=75;i<=100;i++){
+    chapContainer.innerHTML+=`<div class='${i} chap'>${i}</div>`;
+  }
+  chapContainer.innerHTML+=`<div class='4 test'>4</div>`;
+  document.addEventListener("keydown",e=>{
+    document.querySelector(".home .search input").focus();
+    document.querySelector(".practice1Container input").focus();
+    if(document.querySelector(".practice1Container > .tools > .answer").textContent == 'retry'){
+        document.querySelector(".practice1Container input").value = ''
+        document.querySelector(".practice1Container > .tools > .answer").textContent = 'answer'
+        document.querySelector(".practice1Container > .tools > .check").textContent = 'check'
+        document.querySelector(".practice1Container > .answer").style.display = 'none';
+    }
+  })
+  document.addEventListener("keyup",e=>{
+    if(e.key == 'Enter'){
+        if(document.querySelector(".practice1Container > .answer").textContent.trim() == document.querySelector(".practice1Container input").value.trim()){
+            document.querySelector(".practice1Container > .tools > .check").textContent = 'next'
+        }
+    }
+  })
+  document.querySelector(".practice1Container > .tools > .answer").addEventListener("click",e=>{
+    document.querySelector(".practice1Container > .answer").style.display = 'block';
+    document.querySelector(".practice1Container > .tools > .answer").textContent = 'retry'
+    document.querySelector(".practice1Container > .tools > .check").textContent = 'next'
+  })
+</script>
+</html>

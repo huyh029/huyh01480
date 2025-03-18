@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng 8/3</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 2s;
+        }
+        .card.flip .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card-front {
+            background-color: #ff9999;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-back {
+            background-color: white;
+            color: #333;
+            transform: rotateY(180deg);
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="flipCard()">
+        <div class="card-inner">
+            <div class="card-front">
+                ❤️ Chúc Mừng 8/3 Mẹ ❤️
+            </div>
+            <div class="card-back">
+                <p>Chúc mẹ ngày 8/3 thật hạnh phúc, luôn mạnh khỏe và tràn đầy niềm vui!</p>
+                <p>💖</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function flipCard() {
+            document.querySelector('.card').classList.toggle('flip');
+            createHearts();
+        }
+        function createHearts() {
+            for (let i = 0; i < 10; i++) {
+                let heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = window.innerHeight + 'px';
+                heart.style.animationDuration = Math.random() * 2 + 2 + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 10000);
+            }
+        }
+    </script>
+</body>
+</html>

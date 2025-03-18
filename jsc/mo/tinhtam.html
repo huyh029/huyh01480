@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tịnh tâm</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.gomo, .gochuong{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.mo, .chuong{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+.mo{
+    background-image: url("https://www.dropbox.com/scl/fi/adl95u2bjrs9kvlgc24o4/pre-removebg-preview.png?rlkey=zt2vqcb2cnz3r8q536zyui6xj&st=1bdlx0id&raw=1");
+}
+.chuong{
+    width: 270px;
+    height: 300px;
+    border-radius: 10px 10px 100px 100px;
+    background-color: azure;
+}
+.can{
+    width: 300px;
+    height: 15px;
+    background-color: white;
+    border-radius: 15px;
+}
+.dau{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 0;
+}
+.thanh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    transform-origin: left bottom; /* Thiết lập điểm xoay */
+    transform: rotate(-20deg); /* -8.5 deg */
+    width: 300px;
+    height: 30px;
+    position: absolute; 
+}
+.go{
+    animation: go 0.1s ease;
+}
+@keyframes go {
+    0%{ transform: rotate(-20deg);}
+    50%{transform: rotate(-8.5deg);}
+    100%{
+        transform: rotate(-20deg);
+    }
+}
+ .thanhchuong{
+    top: 10px;
+    left: -250px;
+}
+.thanhmo{
+    top: 130px;
+    left: 0px;
+} 
+    </style>
+</head>
+<body>
+    <div class="gomo">
+        <div class="mo">
+            <div class="thanhmo thanh">
+                <div class="can"></div>
+                <div class="dau"></div>
+            </div>
+        </div>
+        <div id="mo">
+        </div>
+        </div>
+    
+        <div class="gochuong">
+                <div class="chuong">
+                    <div class="thanhchuong thanh">
+                        <div class="can"></div>
+                        <div class="dau"></div>
+                    </div>
+                </div>
+                
+            <div id="chuong">
+            </div>
+        </div>
+</body>
+<script>
+    var thanhchuong = document.querySelector(".thanhchuong");
+var thanhmo = document.querySelector(".thanhmo");
+var mo = document.querySelector(".mo");
+var audioMo = document.createElement('audio');
+audioMo.src = "https://www.dropbox.com/scl/fi/4azf6omv4gtsd17wq0ybx/1118.MP3?rlkey=tj3zgl6giw2lv203vuq7d7lhw&st=rxohofhi&raw=1";  
+audioMo.preload = "auto";  
+document.body.appendChild(audioMo);  
+var audioChuong = document.createElement('audio');
+audioChuong.src = "https://www.dropbox.com/scl/fi/kksmz3y7lpo6r8rbxto00/1119.MP3?rlkey=4s3ylujwvvxt01s8zrv8ebpn8&st=wg3spw29&raw=1"; 
+audioChuong.preload = "auto";  
+document.body.appendChild(audioChuong);  
+
+document.addEventListener("keydown", e => {
+    switch (e.key) {
+        case 'Enter':
+            gochuong();  
+            break;
+        default:
+            gomo(); 
+            break;
+    }
+});
+
+function gomo() {
+    thanhmo.classList.add('go');
+
+    setTimeout(() => {
+        playAudio(audioMo);  
+        mo.style.backgroundImage = "url('https://www.dropbox.com/scl/fi/mz4ofqx4tns6jc8dareqo/next-removebg-preview.png?rlkey=x7mqpl2osczu6muk36yt24hkk&st=smdklj73&raw=1')";
+        setTimeout(() => {
+            mo.style.backgroundImage = "url('https://www.dropbox.com/scl/fi/adl95u2bjrs9kvlgc24o4/pre-removebg-preview.png?rlkey=zt2vqcb2cnz3r8q536zyui6xj&st=1bdlx0id&raw=1')";
+        }, 50);
+    }, 150);
+
+    setTimeout(() => {
+        thanhmo.classList.remove('go');
+    }, 300);
+}
+
+function gochuong() {
+    thanhchuong.classList.add("go");
+    setTimeout(() => {
+        playAudio(audioChuong); 
+    }, 150);
+    setTimeout(() => {
+        thanhchuong.classList.remove('go');
+    }, 300);
+}
+
+function playAudio(audioElement) {
+    audioElement.currentTime = 0;  
+    audioElement.play();  
+}
+
+document.querySelector(".mo").addEventListener("click",()=>{
+    gomo();
+})
+
+document.querySelector(".chuong").addEventListener("click",()=>{
+    gochuong();
+})
+</script>
+</html>

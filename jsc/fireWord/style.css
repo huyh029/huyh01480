@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body{
+padding: 10px;
+height: 100vh;
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.thiep{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+z-index: -2;
+display: none;
+}
+.hpny{
+font-family: "Sofia", sans-serif;
+font-size: 40px;
+color: rgb(255, 255, 255);
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+text-shadow:0 0 10px yellow;
+}
+.clickme{
+width: 150px;
+height: 150px;
+font-size: 30px;
+color: white;
+border: 1px white solid;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0 0 5px white;
+cursor: pointer;
+z-index: 1;
+position: relative;
+}
+.img {
+width: 40%;
+filter: drop-shadow(0px 0px 10px rgb(238, 255, 0));
+}
+.clickme:hover{
+box-shadow: 0 0 5px white,0 0 10px white;
+text-shadow: 0 0 5px white;
+}
+.bg{
+position: absolute;
+}
+.top{
+top:-50px;
+width: 55%;
+}
+.center{
+top:50px;
+width: 40%;
+}
+.left{
+left:0;
+}
+.right{
+right:0;
+}
+.bg .img{
+width: 100%;
+}
+.content{
+position: relative;
+overflow: hidden;
+box-shadow: 0 0 5px white,0 0 10px yellow;
+z-index: -3;
+width: 40%;
+border-radius: 10px;
+font-size: 20px;
+padding:  40px;
+}
+.content > .img{
+position: absolute;
+top: 0;
+left: 0;
+z-index: -2;
+width: 100%;
+height: 100%;
+}
+div{
+animation: zoomInOut 1s ease-in-out forwards;
+}
+
+@keyframes zoomInOut {
+0% {
+transform: scale(0.5); /* Bắt đầu nhỏ */
+opacity: 0.5; /* Mờ dần */
+}
+50% {
+transform: scale(1.2); /* Phóng to */
+opacity: 1; /* Hiển thị rõ */
+}
+100% {
+transform: scale(1); /* Quay về kích thước ban đầu */
+opacity: 1;
+}
+}
+
+.point{
+width: 0px;
+height: 0px;
+border-radius:10px 10px 50% 50%;
+border: 1px white solid;
+box-shadow: 0 0 5px white,0 0 10px yellow;
+margin-top:0vh;
+animation: abc 2s ease-in-out;
+display: none;
+}
+@keyframes abc{
+0%{
+width: 0px;
+height: 0px;
+margin-top: 70vh;
+}
+30%{
+width: 20px;
+height: 20px;
+margin-top: 70vh;
+}
+60%{
+width: 20px;
+height: 20px;
+margin-top: 70vh;
+}
+62%{
+width: 20px;
+height: 90px;
+margin-top: calc(70vh - 70px);
+}
+75%{
+width: 20px;
+height: 20px;
+margin-top: 0vh;
+}
+100%{
+width: 0px;
+height: 0px;
+margin-top: 0vh;
+}
+}

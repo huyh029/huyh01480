@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay with Interaction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            position: absolute;
+            border: none;
+            transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+        }
+        /* Mặc định của iframe-top: nhỏ và ở góc phải */
+        .iframe-top {
+            z-index: 2;
+            opacity: 0.9;
+            pointer-events: auto;
+            right: 10px;
+            bottom: 10px;
+            width: 80px; /* Kích thước nhỏ mặc định */
+            height: 150px;
+            display: block;
+            cursor: pointer; /* Thêm con trỏ để biết iframe có thể click được */
+        }
+        /* iframe-bottom: chiếm toàn bộ diện tích */
+        .iframe-bottom {
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- File dưới -->
+        <iframe class="iframe-bottom" src="index.html"></iframe>
+        <!-- File trên sẽ được tạo khi click vào iframe-bottom -->
+        <iframe class="iframe-top" src="tonghop.html"></iframe>
+    </div>
+
+    <script>
+        // Lấy phần tử iframe-top
+        const iframeTop = document.querySelector('.iframe-top');
+
+        // Thêm sự kiện click vào iframe-top
+        iframeTop.addEventListener('click', function () {
+            // Mở rộng iframe-top khi click vào
+            iframeTop.style.width = '100%';
+            iframeTop.style.height = '100%';
+            iframeTop.style.right = '0';
+            iframeTop.style.bottom = '0';
+        });
+    </script>
+</body>
+</html>

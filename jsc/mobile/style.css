@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.mobile{
+    border: 10px black solid;
+    padding: 30px 10px;
+    height: 540px;
+    width: 330px;
+    border-radius: 20px;
+    background-image: url("picture/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8yOF9pbGx1c3RyYXRpb25fb2ZfdG9reW9fbWluaW1hbF93YWxscGFwZXJfX2NvbF9jNjkwNjNhZC1mMTY3LTQ4NmYtYWRmMC1jMTE4YWM1NjJjMmRfMS5qcGc.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0 0 5px white;
+    overflow: hidden;
+}
+.camera{
+position: absolute;
+top: 10px;
+left: 10px;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: black;
+}
+.camera::before{
+content: "";
+display: block;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: rgb(53, 53, 53);
+transform: translate(5px,5px);
+
+}
+.manhinhchinh{
+    width: 100px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.manhinhchinh > div {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ehust{
+    background-image: url("picture/OIP.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.controlPane{
+    height: 30px;
+    width: 270px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 40px;
+    display: flex;
+    color: white;
+    text-shadow: 0 0 5px black;
+    justify-content: space-between;
+}
