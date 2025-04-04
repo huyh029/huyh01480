@@ -1,0 +1,33 @@
+*{
+    margin:0 ;
+    padding: 0;
+}
+body{
+    padding:10px;
+}
+body > div{
+    width:60%!important
+}
+body > form{
+   display:grid;
+    grid-template-columns:1fr 5fr;
+    width:60%;
+    font-size:20px;
+    padding:20px 0;
+    gap:10px;
+}
+body input{
+    padding:10px;
+    font-size:20px;
+}
+body input[type=button],body input[type=submit]{
+    width:200px;
+    background-color:black;
+    color:white;
+    border-radius:5px;
+    border:none;
+    outline:none;
+}
+body input[type=button]:hover{
+    background-color:orange;
+}
