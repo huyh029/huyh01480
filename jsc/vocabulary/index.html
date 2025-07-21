@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .check,.next{
+            position: fixed;
+            bottom: 10vh;
+            left: 0;
+            width: 100%;
+            background-color: rgb(29, 93, 172);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5vh;
+            border-radius: 5vh;
+            color: white;
+        }
+        .en{
+            font-size: 25px;
+        }
+        .chosse{
+            width: 60%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border: 1px black solid;
+            border-radius: 100px;
+        }
+        .next{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="en">en</div>
+    <div class="chosse1 chosse">vn1</div>
+    <div class="chosse2 chosse">vn2</div>
+    <div class="chosse3 chosse">vn3</div>
+    <div class="chosse4 chosse">vn4</div>
+    <div class="check">check</div>
+    <div class="next">next</div>
+</body>
+<script>
+    var vocabulary = [
+['abide by', 'tuân theo'],
+['accustomed to', 'quen với'],
+['accurately', 'chính xác'],
+['board', 'lên [, xe, máy bay]'],
+['extend', 'mở rộng'],
+['equivalent', 'tương đương với'],
+['follow up', 'bám sát'],
+['bring up', 'giới thiệu'],
+['client', 'khách hàng'],
+[ 'bring together', 'tụ tập'],
+[ 'get out of', 'thoát khỏi'],
+[ 'balance', 'cân bằng'],
+[ 'casually', 'không trang trọng'],
+[ 'action', '[hành động [thưa kiện'],
+[ 'agenda', 'nhật kí công tác'],
+[ 'busy', 'bận rộn'],
+[ 'assist', 'giúp đỡ'],
+[ 'chain', 'chuỗi'],
+[ 'exclude', 'loại trừ, đuổi'],
+[ 'expect', 'mong đợi'],
+[ 'behavior', 'hành vi, cư xử'],
+[ 'diversity', 'sự đa dạng'],
+[ 'attract', 'thu hút'],
+[ 'debt', 'nợ'],
+[ 'express', '[] hoả tốc [bày tỏ'],
+[ 'engage', 'tham gia vào, thuê'],
+[ 'disseminate', 'lan truyền'],
+[ 'apprehensive', 'lo lắng về tương lai'],
+[ 'compatible', 'tương thích'],
+[ 'expense', 'chi phí'],
+[ 'apprentice', '[người học việc [cho học việc'],
+[ 'culinary', 'ẩm thực'],
+[ 'flexibly', 'linh động'],
+[ 'code', 'mật mã'],
+[ 'asset', 'tài sản'],
+[ 'evaluate', 'đánh giá'],
+[ 'evident', 'rõ ràng'],
+[ 'entertainment', 'giải trí'],
+[ 'come up with', 'nảy ra [ưởng]'],
+[ 'bring in', 'thuê người'],
+[ 'establish', 'thành lập'],
+[ 'excite', 'kích thích'],
+[ 'continue', 'tiếp tục'],
+[ 'collaboration', 'hợp tác'],
+[ 'facilitate', 'làm cho thuận tiện'],
+[ 'accounting', 'công việc kế toán'],
+[ 'benefit', 'lợi ích'],
+[ 'attitude', 'thái độ, quan điểm'],
+[ 'draw', 'thu hút, vẽ'],
+[ 'expert', 'chuyên gia'],
+[ 'disturb', 'làm phiền'],
+[ 'economize', 'tiết kiệm'],
+[ 'gather', 'thu nhập, thu thập'],
+[ 'display', 'hiển thị'],
+[ 'fulfill', 'làm đầy'],
+[ 'defect', 'lỗi'],
+[ 'comfort', 'an ủi'],
+[ 'everyday', 'mỗi ngày'],
+[ 'aware', 'nhận thức'],
+[ 'affordable', 'có khả năng'],
+[ 'enterprise', 'doanh nghiệp'],
+[ 'choose', 'lựa chọn'],
+[ 'deluxe', 'xa xỉ'],
+[ 'allow', 'cho phép'],
+[ 'advanced', 'tiên tiến'],
+[ 'disruption', 'sự gián đoạn'],
+[ 'aware of', 'nhận thức'],
+[ 'assurance', 'sự đảm bảo'],
+[ 'collection', 'bộ sưu tập'],
+[ 'ability', 'khả năng'],
+[ 'announcement', 'thông báo'],
+[ 'depart', 'khởi hành'],
+[ 'ascertain', 'xác định, tìm hiểu chắc chắn'],
+[ 'annually', 'hằng năm'],
+[ 'effective', 'hiệu quả'],
+[ 'consult', 'thảo luận'],
+[ 'convince', 'thuyết phục'],
+[ 'arrive', 'đến'],
+[ 'deduct', 'khấu trừ, lấy đi'],
+[ 'admit', 'thừa nhận'],
+[ 'cover', 'bao che'],
+[ 'crucial', 'chủ yếu'],
+[ 'candidate', 'ứng viên'],
+[ 'bear', '[chịu đựng [con gấu'],
+[ 'deadline', 'giới hạn'],
+[ 'detail', 'chi tiết'],
+[ 'fare', 'giá vé'],
+[ 'competition', 'sự cạnh tranh, cuộc thi'],
+[ 'generate', 'phát ra'],
+[ 'assignment', 'công việc được phân công'],
+[ 'contribute', 'góp phần, dẫn đến'],
+[ 'embarkation', 'hành động lên tàu xe'],
+[ 'figure out', 'hiểu, tìm ra'],
+[ 'achievement', 'thành quả'],
+[ 'forecast', 'dự đoán'],
+[ 'experience', '[trải nghiệm [kinh nghiệm'],
+[ 'hamper', 'cản trở'],
+[ 'element', 'yếu tố'],
+[ 'daringly', 'dũng cảm, mạo hiểm'],
+[ 'basis', 'cơ bản'],
+[ 'catch up', 'bắt kịp'],
+[ 'bargain', '[mặc cả [món hời'],
+[ 'forget', 'quên'],
+[ 'illuminate', 'làm trắng sáng'],
+[ 'frequently', 'thường xuyên'],
+[ 'general', '[] chung chung [tướng'],
+[ 'arrangement', 'sự sắp xếp'],
+[ 'dividend', 'cổ phần'],
+[ 'identify', 'phân biệt rõ'],
+[ 'capacity', 'sức chứa, khả năng'],
+[ 'consider', 'cân nhắc, phân vân'],
+[ 'accumulate', 'sự tích lũy'],
+[ 'demand', 'nhu cầu'],
+[ 'convenient', 'thuận lợi'],
+[ 'complete', 'hoàn thành'],
+[ 'consequence', 'hậu quả'],
+[ 'imply', 'hàm ý'],
+[ 'confusion', 'sự bối rối, khó hiểu'],
+[ 'admire', 'ngưỡng mộ'],
+[ 'enhance', 'nâng cao'],
+[ 'automatically', 'tự động'],
+[ 'goal', 'mục tiêu, chiến thắng'],
+[ 'assume', 'nắm giữ [trí mới]'],
+[ 'failure', 'thất bại'],
+[ 'dialogue', 'đoạn hội thoại'],
+[ 'burden', '[trách nhiệm [đè nặng lên'],
+[ 'explore', 'thăm dò, khám phá'],
+[ 'fluctuate', 'giao động'],
+[ 'entitle', 'cho phép'],
+[ 'combine', 'kết hợp'],
+[ 'claim', 'đòi hỏi, nhận'],
+[ 'deal with', 'giải quyết'],
+[ 'distraction', 'sự sao nhãng'],
+[ 'customer', 'khách hàng'],
+[ 'conform to', 'thích nghi, làm cho phù hợp'],
+[ 'borrow', 'mượn'],
+[ 'commit', 'cam kết'],
+[ 'escort', 'người bảo vệ'],
+[ 'appointment', 'cuộc hẹn'],
+[ 'secretary', 'thư ký'],
+[ 'favor', 'sự đồng ý, sự giúp đỡ'],
+[ 'receptionist', 'lễ tân'],
+[ 'compromise', 'kết hợp'],
+[ 'acquire', 'đạt được'],
+[ 'disk', 'ổ đĩa'],
+[ 'eligible', 'thích hợp'],
+[ 'exact', 'chính xác'],
+[ 'in charge of', 'phụ trách, đứng đầu'],
+[ 'estimate', 'đánh giá'],
+[ 'durable', 'kéo dài'],
+[ 'fall to', 'rơi vào ai [ch nhiệm]'],
+[ 'designate', 'chỉ định cho'],
+[ 'characteristic', 'đặc trưng'],
+[ 'expose', 'trưng bày'],
+[ 'coincide', 'xảy ra đồng thời'],
+[ 'hesitant', 'dè dặt'],
+[ 'category', 'thể loại'],
+[ 'conservative', 'thận trọng'],
+[ 'assemble', 'tập hợp lại'],
+[ 'adjustment', 'sự điều chỉnh'],
+[ 'delicately', 'tế nhị'],
+[ 'dedication', 'sự cống hiến'],
+[ 'condition', 'điều kiện'],
+[ 'destination', 'điểm đến'],
+[ 'uniform', 'đồng phục'],
+[ 'access', 'truy cập'],
+[ 'give up', 'từ bỏ'],
+[ 'criticism', 'chỉ trích'],
+[ 'disperse', 'lan truyền'],
+[ 'compensate', 'đền bù'],
+[ 'fold', 'gấp lại'],
+[ 'avoid', 'tránh'],
+[ 'familiar', 'quen thuộc'],
+[ 'impress', 'ấn tượng'],
+[ 'beforehand', 'trước'],
+[ 'aspect', 'khía cạnh'],
+[ 'conduct', 'hướng dẫn'],
+[ 'disappoint', 'thất vọng'],
+[ 'conducive', 'góp phần, dẫn đến'],
+[ 'audit', 'kiểm toán'],
+[ 'detect', 'phát hiện'],
+[ 'housekeeper', 'quản gia'],
+[ 'hire', 'thuê'],
+[ 'apply', 'áp dụng'],
+[ 'ignore', 'phớt lờ'],
+[ 'guide', '[người hướng dẫn [hướng dẫn'],
+[ 'compile', 'sưu tập, biên soạn'],
+[ 'creative', 'sáng tạo'],
+[ 'calculation', 'tính toán'],
+[ 'examine', 'kiểm tra'],
+[ 'encouragement', 'khuyến khích'],
+[ 'impose', 'đánh thuế'],
+[ 'garment', 'vải áo quần'],
+[ 'need', 'cần'],
+[ 'factor', 'nhân tố'],
+[ 'catalog', 'danh mục'],
+[ 'go ahead', 'tiến tới, cho phép'],
+[ 'divide', 'phân chia'],
+[ 'function', 'chức năng'],
+[ 'impact', 'ảnh hưởng'],
+[ 'charge', '[chi trả [thù lao, phí phải trả'],
+[ 'elegance', 'sự trang nhã'],
+[ 'circumstance', 'tình hình'],
+[ 'compare', 'so sánh'],
+[ 'commensurate', 'xứng với'],
+[ 'directory', 'danh bạ'],
+[ 'approach', 'tiếp cận'],
+[ 'consume', 'tiêu dùng, tiêu thụ'],
+[ 'appreciation', 'sự đánh giá'],
+[ 'hold', 'nắm giữ'],
+[ 'complication', 'phức tạp'],
+[ 'jobless', 'thất nghiệp'],
+[ 'attend', 'tham dự'],
+[ 'job', 'công việc'],
+[ 'allocate', 'phân vùng'],
+[ 'appeal', '[sự thu hút, sự kêu gọi [thích thú, hấp hẫn'],
+[ 'currently', 'hiện tại'],
+[ 'agent', 'đại diện của công ty'],
+[ 'broaden', 'mở rộng'],
+[ 'adhere to', 'tuân theo'],
+[ 'audience', 'khán giả'],
+[ 'address', 'địa chỉ'],
+[ 'desire', 'mong muốn'],
+[ 'design', 'thiết kế'],
+[ 'accomplishment', 'sự hoàn thành'],
+[ 'courier', 'người đưa thư'],
+[ 'association', 'sự liên kết, hiệp hội'],
+[ 'anxious', 'lo lắng'],
+[ 'control', 'kiểm soát'],
+[ 'background', 'gia cảnh'],
+[ 'comprehensive', 'bao gồm những thứ cần thiết'],
+[ 'conclude', 'kết luận'],
+[ 'description', 'mô tả'],
+[ 'duration', 'khoảng thời gian'],
+[ 'check in', 'đăng ký'],
+[ 'decade', 'thập kỉ'],
+[ 'basic', 'cơ bản'],
+[ 'dimension', 'kích thước'],
+[ 'get in touch', 'liên lạc với ai'],
+[ 'fill out', 'hoàn thành'],
+[ 'diagnose', 'chẩn đoán [h]'],
+[ 'fad', 'xu hướng'],
+[ 'brand', 'thương hiệu'],
+[ 'available', 'có sẵn'],
+[ 'call in', 'gọi đến'],
+[ 'demonstrate', 'chứng minh'],
+[ 'flavor', 'hương vị'],
+[ 'confident', 'tự tin'],
+[ 'expiration', 'hết hạn'],
+[ 'accept', 'chấp nhận'],
+[ 'blanket', 'cái mền'],
+[ 'abundance', 'sự dồi dào'],
+[ 'fashion', 'thời trang'],
+[ 'beverage', 'nước giải khát'],
+[ 'efficient', 'hiệu quả'],
+[ 'alternative', '[lựa chọn khác [] thay phiên, thay thế'],
+[ 'experiment', 'thí nghiệm'],
+[ 'glimpse', '[nhìn thoáng qua [cái nhìn thoáng qua'],
+[ 'excursion', 'du lịch ngắn ngày'],
+[ 'agreement', 'sự đồng ý'],
+[ 'constantly', 'liên tục'],
+[ 'constitute', 'hình thành'],
+[ 'cautiously', 'thận trọng'],
+[ 'concentrate', 'tập trung'],
+[ 'duplicate', 'bản sao'],
+[ 'attainment', 'đạt được'],
+[ 'down payment', 'tiền trả trước'],
+[ 'delay', 'trì hoãn'],
+[ 'concern', 'lo ngại'],
+[ 'confirm', 'xác nhận'],
+[ 'journalist', 'nhà báo'],
+[ 'essentially', 'về bản chất'],
+[ 'ideal', 'lý tưởng'],
+[ 'accommodate', 'cung cấp'],
+[ 'build up', 'tăng lên, phát triển'],
+[ 'decision', 'quyết định'],
+[ 'assess', 'đánh giá'],
+[ 'commonly', 'thông thường'],
+[ 'checkout', 'quầy thanh toán'],
+[ 'habit', 'thói quen'],
+[ 'contact', 'liên hệ'],
+[ 'aggressively', 'quyết đoán, mạnh bạo, hùng hổ'],
+[ 'develop', 'phát triển'],
+[ 'authorize', 'ủy quyền'],
+[ 'budget', 'ngân sách'],
+[ 'expand', 'mở rộng'],
+[ 'determine', 'xác định'],
+[ 'delete', 'xóa bỏ'],
+[ 'cancellation', 'sự hủy bỏ'],
+[ 'due to', 'bởi vì'],
+[ 'discrepancy', 'sự khác nhau'],
+[ 'distinguish', 'phân biệt'],
+[ 'discount', 'giảm giá'],
+[ 'fund', 'quỹ'],
+[ 'delivery', 'phân phối, vận chuyển'],
+[ 'disparate', 'khác biệt'],
+[ 'adjacent', 'kế bên'],
+[ 'emphasize', 'nhấn mạnh'],
+[ 'coordinate', 'kết hợp'],
+[ 'confidence', 'sự tự tin']]
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    // Chọn một chỉ số ngẫu nhiên từ 0 đến i
+    const j = Math.floor(Math.random() * (i + 1));
+    // Hoán đổi phần tử tại vị trí i và j
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+shuffleArray(vocabulary)
+var index = 0 
+function getRandomUniqueElements(arr, count = 3, excludeIndex = -1) {
+  if (count > arr.length - 1) {
+    throw new Error("Không đủ phần tử để chọn sau khi loại trừ");
+  }
+
+  const result = [];
+  const usedIndices = new Set();
+
+  while (result.length < count) {
+    const index = Math.floor(Math.random() * arr.length);
+    if (index === excludeIndex || usedIndices.has(index)) continue;
+
+    usedIndices.add(index);
+    result.push(arr[index]);
+  }
+
+  return result;
+}
+
+var chosse = [...getRandomUniqueElements(vocabulary,3,index),vocabulary[index]]
+shuffleArray(chosse)
+var chosse1 = document.querySelector(".chosse1")
+var chosse2 = document.querySelector(".chosse2")
+var chosse3 = document.querySelector(".chosse3")
+var chosse4 = document.querySelector(".chosse4")
+var en = document.querySelector(".en")
+chosse1.textContent = chosse[0][1]
+chosse2.textContent = chosse[1][1]
+chosse3.textContent = chosse[2][1]
+chosse4.textContent = chosse[3][1]
+en.textContent = vocabulary[index][0]
+function chos(e){
+    chosse1.style.background = 'none'
+    chosse2.style.background = 'none'
+    chosse3.style.background = 'none'
+    chosse4.style.background = 'none'
+    e.style.backgroundColor = '#f1f1f1'
+}
+var op = 0 
+chosse1.addEventListener("click",()=>{chos(chosse1);op=0})
+chosse2.addEventListener("click",()=>{chos(chosse2);op=1})
+chosse3.addEventListener("click",()=>{chos(chosse3);op=2})
+chosse4.addEventListener("click",()=>{chos(chosse4);op=3})
+var ch = [chosse1,chosse2,chosse3,chosse4]
+var check = document.querySelector(".check")
+var next = document.querySelector(".next")
+check.addEventListener("click",()=>{if(chosse[op][1].trim()==vocabulary[index][1].trim()) 
+    ch[op].style.backgroundColor = 'green'; 
+    else ch[op].style.backgroundColor = 'red'; 
+    check.style.display = 'none';
+    next.style.display = 'flex' })
+next.addEventListener("click",()=>{
+    check.style.display = 'flex';
+    next.style.display = 'none'
+    chosse1.style.background = 'none'
+    chosse2.style.background = 'none'
+    chosse3.style.background = 'none'
+    chosse4.style.background = 'none'
+    index++;
+    if(index==vocabulary.length) {
+        shuffleArray(vocabulary)
+        index=0
+    }
+    chosse = []
+    chosse = [...getRandomUniqueElements(vocabulary,3,index),vocabulary[index]]
+    chosse1.textContent = chosse[0][1]
+    chosse2.textContent = chosse[1][1]
+    chosse3.textContent = chosse[2][1]
+    chosse4.textContent = chosse[3][1]
+    en.textContent = vocabulary[index][0]
+})
+</script>
+</html>
